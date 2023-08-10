@@ -4,6 +4,9 @@
 ## Prerequisites
 HEX files for supported Arduinos are available in the [release section](https://github.com/bird-sanctuary/arduino-c2-interface/releases). If your Arduino is not supported, you can build manually using [Platform IO](https://platformio.org/) or the [Platform IO plugin for VSCode](https://platformio.org/install/ide?install=vscode).
 
+## Flashing
+You can use the [xLoader](https://github.com/binaryupdates/xLoader) (or any other way you might prefer to flash HEX files to your Arduino) with the provided [HEX file](https://github.com/bird-sanctuary/arduino-c2-interface/releases).
+
 ## Pinout
 For Arduino Uno use the following pinout:
 
@@ -14,6 +17,7 @@ For Arduino Uno use the following pinout:
 
 ### Installing python EFM8 client
 use pipenv to create an virtual env, install dependencies and enter the env:
+
 ```
 pipenv install
 pipenv shell
