@@ -36,7 +36,8 @@ enum Actions {
   WRITE = 0x03,
   ERASE = 0x04,
   READ  = 0x05,
-  INFO  = 0x08
+  INFO  = 0x08,
+  PING  = 0x0F,
 };
 
 struct Device {

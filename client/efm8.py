@@ -71,6 +71,11 @@ class ProgrammingInterface:
     assert self.serial.read(1) == b"\x84"
     print("Device erased")
 
+  def ping(self):
+    self.serial.write(b"\x0F\x00")
+    assert self.serial.read(1) == b"\x8F"
+    print("Ping success")
+
   def reset(self):
     self.serial.write(b"\x02\x00")
     assert self.serial.read(1) == b"\x82"
@@ -128,6 +133,7 @@ parser.add_argument('destination', metavar='DESTINATION', type=str, nargs='?', d
 
 args = parser.parse_args()
 interface = ProgrammingInterface(args.port)
+interface.ping()
 interface.initialize()
 interface.deviceInfo()
 

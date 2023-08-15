@@ -367,6 +367,7 @@ void C2::loop() {
   unsigned char newcrc;
   unsigned long address;
 
+  // Reading data byte wise
   if(Serial.available()) {
     uint8_t data = Serial.read();
     updateState(data);
@@ -476,6 +477,12 @@ void C2::loop() {
           Serial.write(0x88);
           Serial.write(device.id);
           Serial.write(device.revision);
+        }
+
+        case Actions::PING: {
+          resetState();
+
+          Serial.write(0x8F);
         }
       }
     }
